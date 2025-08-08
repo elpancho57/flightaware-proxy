@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 
 app.get('/flightaware', async (req, res) => {
   const { flight, date } = req.query;
-  const apiKey = process.env.FLIGHTAWARE_API_KEY;
+  const apiKey = process.env.flightaware_api_key;
 
   const url = `https://aeroapi.flightaware.com/aeroapi/flights/${flight}?date=${date}`;
   const headers = { 'x-apikey': apiKey };
