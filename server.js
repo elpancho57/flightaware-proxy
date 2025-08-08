@@ -15,6 +15,8 @@ app.get('/flightaware', async (req, res) => {
   try {
     const response = await fetch(url, { headers });
     const result = await response.json();
+    console.log('🔍 Full FlightAware response:', JSON.stringify(result, null, 2));
+
     const tailNumber = result.flights?.[0]?.tailnumber || null;
     res.json({ tailNumber });
   } catch (err) {
@@ -31,6 +33,7 @@ app.get('/lookup', async (req, res) => {
   try {
     const response = await fetch(url, { headers });
     const result = await response.json();
+    console.log('🔍 Full FlightAware response:', JSON.stringify(result, null, 2));
 
     const flightData = result.flights?.[0];
     if (!flightData || !flightData.tailnumber) {
