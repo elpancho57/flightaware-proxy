@@ -1,11 +1,6 @@
 const express = require('express');
 const fetch = require('node-fetch');
 require('dotenv').config();
-
-const app = express();
-const express = require('express');
-const fetch = require('node-fetch');
-require('dotenv').config();
 const app = express(); // ← Line 5
 
 // ✅ CORS Middleware
