@@ -31,7 +31,7 @@ app.get('/flightaware', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch tail number' });
   }
 });
-app.get('/lookup', async (req, res) => {
+app.get('/api/aircraft', async (req, res) => {
   const { flight, date } = req.query;
   const apiKey = process.env.FLIGHTAWARE_API_KEY;
   const url = `https://aeroapi.flightaware.com/aeroapi/flights/${flight}?date=${date}`;
